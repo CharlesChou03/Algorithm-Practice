@@ -1,4 +1,4 @@
 # Algorithm-Practice
 
 * bubble sort
-* select sort
+* selection sort
