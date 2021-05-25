@@ -12,6 +12,7 @@ def BFS(graph, s):
     queue.append(s)
     seen = set()
     seen.add(s)
+    parent = {s: None}
     while len(queue) > 0:
         vertex = queue.pop(0)
         nodes = graph[vertex]
@@ -19,7 +20,17 @@ def BFS(graph, s):
             if w not in seen:
                 queue.append(w)
                 seen.add(w)
+                parent[w] = vertex
         print(vertex)
+    return parent
 
 start_node = input("input start nodes: ")
-BFS(graph, start_node)
+end_node = input("input end nodes: ")
+parent = BFS(graph, start_node)
+#for p in parent:
+#    print(p, parent[p])
+
+print("==============")
+while end_node != None:
+    print(end_node)
+    end_node = parent[end_node]
