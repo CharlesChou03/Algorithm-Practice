@@ -19,12 +19,13 @@ def merge_sort(arr):
                 arr[k]=righthalf[j]
                 j=j+1
             k=k+1
-
+        # if all right half element less than first item in left half
         while i < len(lefthalf):
             arr[k]=lefthalf[i]
             i=i+1
             k=k+1
-
+        
+        # if all left half element less than first item in right half
         while j < len(righthalf):
             arr[k]=righthalf[j]
             j=j+1
